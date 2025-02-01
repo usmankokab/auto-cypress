@@ -1,14 +1,14 @@
 import BasePage from "./BasePage";
 const routes = require('../config/routes');
-import { ENDPOINT_PREFIX } from "../config/constants";
+import { ENDPOINT_PREFIX } from "../config/CONSTANTS";
 
 class LoginPage extends BasePage{
 
-    get continueBtn() { return cy.get('a').contains('Continue'); }
-    get loginInput() { return cy.get('#input-email'); }
-    get passwordInput() { return cy.get('#input-password'); }
-    get loginBtn() { return cy.get("input[value='Login']"); }
-    get alertMsg() { return cy.get('#account-login .alert'); }
+    //get usernameInput() { return cy.get('input[placeholder="UserName'); }
+    get usernameInput() { return cy.get('input[placeholder="Username'); }
+    get passwordInput() { return cy.get('input[placeholder="Password"'); }
+    get loginBtn() { return cy.get("button[type=submit]"); }
+    get alertMsg() { return cy.get('button.MuiButton-containedSizeSmall.css-18qmf20'); }
 
     open() {
         //cy.visit('?route=account/login');   //Prefixes the baseUrl
@@ -16,16 +16,17 @@ class LoginPage extends BasePage{
         return super.open(ENDPOINT_PREFIX + routes.LOGIN_ENDPOINT)
     }
 
-    openRegistrationPage() {
-        this.open();
-        this.continueBtn.click();
-    }
+    // openRegistrationPage() {
+    //     this.open();
+    //     this.continueBtn.click();
+    // }
 
-    loginWithUI(email, password) {
+    loginWithUI(user, password) {
         this.open();
-        this.loginInput.type(email)
+        this.usernameInput.clear().type(user)
         this.passwordInput.type(password)
         this.loginBtn.click()
+  
     }
 
 }

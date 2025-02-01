@@ -1,10 +1,14 @@
 {
-    "validUser": {
-      "email": "testuser@test.com",
-      "password": "test123"
+   "superAdmin": {
+      "user": "071124_sadmin",
+      "password": "071124_sadmin"
+    }, 
+   "validUser": {
+      "user": "ahmad123",
+      "password": "ahmad123"
     },
     "invalidUser": {
-      "email": "invalid@test.com",
+      "user": "invaliduser",
       "password": "invalidpassword"
     }
 }

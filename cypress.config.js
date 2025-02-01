@@ -77,7 +77,7 @@ module.exports = defineConfig({
     runMode: 1,
     // Configure retry attempts for `cypress open`
     // Default is 0
-    openMode : 1
+    openMode : 0
   },
 
 
@@ -137,7 +137,9 @@ module.exports = defineConfig({
     //Any key/value you set in your Cypress configuration under the env key will become an environment variable.
     //When your tests are running, you can use the Cypress.env function to access the values of your environment variables.
     env : {
-      URL : 'https://naveenautomationlabs.com/opencart/index.php'
+      //URL : 'https://naveenautomationlabs.com/opencart/index.php'
+      //URL : 'https://socket.bookofblack.com/'
+      URL : 'https://1obet.com/'
     }
 
   },
